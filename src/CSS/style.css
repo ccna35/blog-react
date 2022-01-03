@@ -1,0 +1,227 @@
+nav {
+  padding: 1rem 0;
+}
+nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .navbar .brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #53bd95;
+}
+@media (max-width: 720px) {
+  nav .navbar .navMenu {
+    display: none;
+  }
+  nav .navbar .navMenu.active {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+nav .navbar .navMenu li {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.5s, background-color 0.5s;
+}
+nav .navbar .navMenu li:hover a {
+  color: white;
+}
+nav .navbar .navMenu li:not(:last-child) {
+  margin-right: 2rem;
+}
+nav .navbar .navMenu li:not(:last-child):hover {
+  background-color: #53bd95;
+  color: white;
+}
+nav .navbar .navMenu li:last-child {
+  background-color: #53bd95;
+  color: white;
+}
+nav .navbar .navMenu li:last-child a:last-child {
+  color: white;
+}
+nav .navbar .navMenu li:last-child:hover {
+  background-color: #2c2c2b;
+}
+nav .navbar .navMenu li a {
+  color: #2c2c2b;
+  transition: color 0.5s;
+}
+nav .navbar .navMenu li.active {
+  margin-right: 0;
+  font-size: 1.5rem;
+}
+nav .navbar .burgerMenu {
+  width: 2rem;
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 720px) {
+  nav .navbar .burgerMenu {
+    display: none;
+  }
+}
+nav .navbar .burgerMenu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 8px);
+}
+nav .navbar .burgerMenu.active span:nth-child(2) {
+  transform: translateX(50vw);
+}
+nav .navbar .burgerMenu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -8px);
+}
+nav .navbar .burgerMenu span {
+  width: 100%;
+  height: 4px;
+  background-color: #53bd95;
+  border-radius: 1rem;
+  transition: all 0.7s;
+}
+
+.container {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #2c2c2b;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+.home {
+  padding: 1rem 0;
+}
+
+article {
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 4px 0px lightgrey;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 1rem;
+}
+article .postHeader {
+  display: flex;
+  justify-content: space-between;
+}
+article .published {
+  font-weight: 300;
+  color: #40403f;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+article .published div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+article .published .date, article .published .author {
+  font-weight: 500;
+}
+article .published img {
+  width: 30px;
+  border-radius: 50%;
+}
+article .postBody {
+  margin-top: 1rem;
+}
+
+.login .loginContainer {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+}
+.login .loginContainer .loginBtn {
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 3px 0px #c8c7cc;
+  border: 1px solid #c8c7cc;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2c2c2b;
+  cursor: pointer;
+}
+.login .loginContainer .loginBtn img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.newpost .newPostContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.newpost .newPostContainer .inputGroup input, .newpost .newPostContainer .inputGroup textarea {
+  width: 100%;
+  outline: none;
+  box-shadow: 2px 1px 3px 0px #c8c7cc;
+  border: 1px solid #c8c7cc;
+  padding: 0.5rem;
+  border-radius: 5px;
+  transition: border-color 0.5s;
+}
+.newpost .newPostContainer .inputGroup input:focus, .newpost .newPostContainer .inputGroup textarea:focus {
+  border-color: #2c2c2b;
+}
+.newpost .newPostContainer .inputGroup textarea {
+  max-width: 100%;
+}
+.newpost .newPostContainer button {
+  outline: none;
+  box-shadow: 1px 1px 3px 0px #c8c7cc;
+  border: 1px solid transparent;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  align-self: flex-start;
+  cursor: pointer;
+  background-color: #53bd95;
+  color: white;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.newpost .newPostContainer button:hover {
+  background-color: white;
+  color: #2c2c2b;
+  border-color: #c8c7cc;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,40 @@
+article {
+  margin-bottom: 1rem;
+  box-shadow: 1px 1px 4px 0px lightgrey;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  .postHeader {
+    display: flex;
+    justify-content: space-between;
+  }
+  .published {
+    font-weight: 300;
+    color: #40403f;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    div {
+      &:last-child {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+    .date {
+      font-weight: 500;
+    }
+    .author {
+      @extend .date;
+    }
+
+    img {
+      width: 30px;
+      border-radius: 50%;
+    }
+  }
+  .postBody {
+    margin-top: 1rem;
+  }
+}
