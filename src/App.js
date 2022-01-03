@@ -31,7 +31,10 @@ function App() {
       <Router>
         <Navbar signedIn={signedIn} setSignedIn={setSignedIn} />
         <Routes>
-          <Route path="/" element={<Home deletePost={deletePost} />} />
+          <Route
+            path="/"
+            element={<Home deletePost={deletePost} signedIn={signedIn} />}
+          />
           <Route path="/newpost" element={<NewPost signedIn={signedIn} />} />
           <Route path="/login" element={<Login setSignedIn={setSignedIn} />} />
           <Route path="/signout" element={<SignOut />} />

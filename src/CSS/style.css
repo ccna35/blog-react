@@ -135,6 +135,13 @@ article .postHeader {
   display: flex;
   justify-content: space-between;
 }
+article .postHeader .trashIcon {
+  cursor: pointer;
+  transition: color 0.5s;
+}
+article .postHeader .trashIcon:hover {
+  color: #53bd95;
+}
 article .published {
   font-weight: 300;
   color: #40403f;

@@ -1,12 +1,21 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { auth } from "../firebaseConfig";
 
-function Post({ post, deletePost }) {
+function Post({ post, deletePost, signedIn }) {
+  // console.log(auth.currentUser);
   return (
     <article>
       <div className="postHeader">
-        <h2>{post.title}</h2>{" "}
-        <FontAwesomeIcon icon="trash-alt" onClick={() => deletePost(post.id)} />
+        <h2>{post.title}</h2>
+
+        {signedIn && auth.currentUser.uid === post.author.id && (
+          <FontAwesomeIcon
+            icon="trash-alt"
+            onClick={() => deletePost(post.id)}
+            className="trashIcon"
+          />
+        )}
       </div>
       <div className="published">
         <div>

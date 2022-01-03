@@ -3,7 +3,7 @@ import Posts from "./Posts";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
-function Home({ deletePost }) {
+function Home({ deletePost, signedIn }) {
   const [postsList, setPostsList] = useState([]);
   const postsCollection = collection(db, "posts");
 
@@ -26,7 +26,11 @@ function Home({ deletePost }) {
   return (
     <main className="home">
       <div className="container">
-        <Posts postsList={postsList} deletePost={deletePost} />
+        <Posts
+          postsList={postsList}
+          deletePost={deletePost}
+          signedIn={signedIn}
+        />
       </div>
     </main>
   );

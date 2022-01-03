@@ -7,6 +7,13 @@ article {
   .postHeader {
     display: flex;
     justify-content: space-between;
+    .trashIcon {
+      cursor: pointer;
+      transition: color 0.5s;
+      &:hover {
+        color: #53bd95;
+      }
+    }
   }
   .published {
     font-weight: 300;
