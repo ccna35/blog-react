@@ -20,7 +20,7 @@ function Post({ post, deletePost, signedIn }) {
         <div>
           Published on{" "}
           <span className="date">
-            {post.datePublished.toDate().toDateString()}
+            {/* {post.datePublished.toDate().toDateString()} */}
           </span>
         </div>
         <div>
