@@ -130,7 +130,6 @@ article {
   box-shadow: 1px 1px 4px 0px lightgrey;
   border-radius: 5px;
   border: 1px solid lightgray;
-  height: 25rem;
 }
 article .postImageContainer {
   overflow: hidden;
@@ -245,7 +244,7 @@ article .postBody {
 
 .posts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
