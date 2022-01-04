@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Posts from "./Posts";
-import { collection, doc, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 function Home({ deletePost, signedIn }) {

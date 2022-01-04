@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { auth } from "../firebaseConfig";
 
 function Post({ post, deletePost, signedIn }) {
-  // console.log(auth.currentUser);
   return (
     <article>
       <div className="postHeader">
