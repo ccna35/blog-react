@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Posts from "./Posts";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, onSnapshot } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 
 function Home({ deletePost, signedIn }) {
@@ -8,20 +8,20 @@ function Home({ deletePost, signedIn }) {
   const postsCollection = collection(db, "posts");
 
   useEffect(() => {
-    let isMounted = true;
-    const getPosts = async () => {
-      const querySnapshot = await getDocs(postsCollection);
-      if (isMounted) {
-        setPostsList(
-          querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        );
-      }
-    };
-    getPosts();
+    console.log("read 1");
+    const unsub = onSnapshot(postsCollection, (snapshot) => {
+      let posts = [];
+
+      snapshot.docs.map((doc) => {
+        return posts.push({ ...doc.data(), id: doc.id });
+      });
+      setPostsList(posts);
+    });
+
     return () => {
-      isMounted = false;
+      unsub();
     };
-  });
+  }, []);
 
   return (
     <main className="home">
