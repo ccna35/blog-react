@@ -15,6 +15,7 @@ function Navbar({ signedIn, setSignedIn }) {
       setSignedIn(false);
       navigate("login");
     });
+    setActive(false);
   };
 
   return (
@@ -23,16 +24,25 @@ function Navbar({ signedIn, setSignedIn }) {
         <div className="navbar">
           <div className="brand">BLOGX</div>
           <ul className={`navMenu ${active && "active"}`}>
-            <li className={`navMenuItem ${active && "active"}`}>
+            <li
+              className={`navMenuItem ${active && "active"}`}
+              onClick={() => setActive(false)}
+            >
               <Link to="/">Home</Link>
             </li>
             {signedIn && (
-              <li className={`navMenuItem ${active && "active"}`}>
+              <li
+                className={`navMenuItem ${active && "active"}`}
+                onClick={() => setActive(false)}
+              >
                 <Link to="/newpost">Create New Post</Link>
               </li>
             )}
             {!signedIn && (
-              <li className={`navMenuItem ${active && "active"}`}>
+              <li
+                className={`navMenuItem ${active && "active"}`}
+                onClick={() => setActive(false)}
+              >
                 <Link to="/login">Login</Link>
               </li>
             )}

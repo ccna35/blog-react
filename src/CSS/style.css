@@ -125,15 +125,27 @@ ul, li {
 }
 
 article {
+  overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 1px 1px 4px 0px lightgrey;
   border-radius: 5px;
   border: 1px solid lightgray;
+  height: 25rem;
+}
+article .postImageContainer {
+  overflow: hidden;
+  height: 10rem;
+}
+article .postImageContainer img {
+  width: 100%;
+}
+article .postBodyContainer {
   padding: 1rem;
 }
 article .postHeader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 article .postHeader .trashIcon {
   cursor: pointer;
@@ -229,6 +241,12 @@ article .postBody {
   background-color: white;
   color: #2c2c2b;
   border-color: #c8c7cc;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

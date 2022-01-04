@@ -1,12 +1,24 @@
 article {
+  overflow: hidden;
   margin-bottom: 1rem;
   box-shadow: 1px 1px 4px 0px lightgrey;
   border-radius: 5px;
   border: 1px solid lightgray;
-  padding: 1rem;
+  height: 25rem;
+  .postImageContainer {
+    overflow: hidden;
+    height: 10rem;
+    img {
+      width: 100%;
+    }
+  }
+  .postBodyContainer {
+    padding: 1rem;
+  }
   .postHeader {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     .trashIcon {
       cursor: pointer;
       transition: color 0.5s;
