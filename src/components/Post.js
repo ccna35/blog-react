@@ -18,10 +18,7 @@ function Post({ post, deletePost, signedIn }) {
       </div>
       <div className="published">
         <div>
-          Published on{" "}
-          <span className="date">
-            {/* {post.datePublished.toDate().toDateString()} */}
-          </span>
+          Published on <span className="date"></span>
         </div>
         <div>
           by
