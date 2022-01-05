@@ -15,6 +15,8 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebaseConfig";
+import SinglePostPage from "./components/SinglePostPage";
+import NotFound from "./components/NotFound";
 
 library.add(faCheckSquare, faCoffee, faTrash, faTrashAlt);
 
@@ -35,9 +37,11 @@ function App() {
             path="/"
             element={<Home deletePost={deletePost} signedIn={signedIn} />}
           />
+          <Route path="/post/:id" element={<SinglePostPage />} />
           <Route path="/newpost" element={<NewPost signedIn={signedIn} />} />
           <Route path="/login" element={<Login setSignedIn={setSignedIn} />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

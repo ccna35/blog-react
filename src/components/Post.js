@@ -1,28 +1,24 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { auth } from "../firebaseConfig";
+import { Link } from "react-router-dom";
 
-function Post({ post, deletePost, signedIn }) {
+function Post({ post }) {
   return (
-    <article>
+    <div className="homepageArticle">
       <div className="postImageContainer">
         <img src={post.postImage} alt="Post" />
       </div>
       <div className="postBodyContainer">
         <div className="postHeader">
-          <h2>{post.title}</h2>
-
-          {signedIn && auth.currentUser.uid === post.author.id && (
-            <FontAwesomeIcon
-              icon="trash-alt"
-              onClick={() => deletePost(post.id)}
-              className="trashIcon"
-            />
-          )}
+          <Link to={`/post/${post.id}`}>
+            <h2>{post.title}</h2>
+          </Link>
         </div>
         <div className="published">
           <div>
-            Published on <span className="date"></span>
+            Published on{" "}
+            <span className="date">
+              {post.datePublished.toDate().toDateString()}
+            </span>
           </div>
           <div>
             by
@@ -32,7 +28,7 @@ function Post({ post, deletePost, signedIn }) {
         </div>
         <p className="postBody">{post.postText}</p>
       </div>
-    </article>
+    </div>
   );
 }
 

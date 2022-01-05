@@ -24,27 +24,33 @@ function Navbar({ signedIn, setSignedIn }) {
         <div className="navbar">
           <div className="brand">BLOGX</div>
           <ul className={`navMenu ${active && "active"}`}>
-            <li
-              className={`navMenuItem ${active && "active"}`}
-              onClick={() => setActive(false)}
-            >
-              <Link to="/">Home</Link>
-            </li>
-            {signedIn && (
+            <Link to="/">
               <li
                 className={`navMenuItem ${active && "active"}`}
                 onClick={() => setActive(false)}
               >
-                <Link to="/newpost">Create New Post</Link>
+                Home
               </li>
+            </Link>
+            {signedIn && (
+              <Link to="/newpost">
+                <li
+                  className={`navMenuItem ${active && "active"}`}
+                  onClick={() => setActive(false)}
+                >
+                  Create New Post
+                </li>
+              </Link>
             )}
             {!signedIn && (
-              <li
-                className={`navMenuItem ${active && "active"}`}
-                onClick={() => setActive(false)}
-              >
-                <Link to="/login">Login</Link>
-              </li>
+              <Link to="/login">
+                <li
+                  className={`navMenuItem ${active && "active"}`}
+                  onClick={() => setActive(false)}
+                >
+                  Login
+                </li>
+              </Link>
             )}
             {signedIn && (
               <li

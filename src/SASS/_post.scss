@@ -1,13 +1,11 @@
-article {
+.homepageArticle {
   overflow: hidden;
-  margin-bottom: 1rem;
   box-shadow: 1px 1px 4px 0px lightgrey;
   border-radius: 5px;
   border: 1px solid lightgray;
-  // height: 25rem;
   .postImageContainer {
     overflow: hidden;
-    height: 10rem;
+    height: 13rem;
     img {
       width: 100%;
     }
@@ -19,6 +17,12 @@ article {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    a {
+      color: #40403f;
+      h2 {
+        font-weight: 500;
+      }
+    }
     .trashIcon {
       cursor: pointer;
       transition: color 0.5s;
@@ -34,6 +38,7 @@ article {
     display: flex;
     gap: 5px;
     flex-direction: column;
+    margin-top: 1rem;
     div {
       &:last-child {
         display: flex;
@@ -55,5 +60,10 @@ article {
   }
   .postBody {
     margin-top: 1rem;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
 }

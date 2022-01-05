@@ -1,0 +1,48 @@
+article {
+  .postImageContainer {
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  .postBodyContainer {
+    margin-bottom: 2rem;
+  }
+  .postHeader {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      font-weight: 500;
+      font-size: 2rem;
+    }
+    .trashIcon {
+      cursor: pointer;
+      transition: color 0.5s;
+      &:hover {
+        color: #53bd95;
+      }
+    }
+  }
+  .published {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    & > div {
+      align-self: center;
+      font-size: 0.9rem;
+    }
+    .date {
+      font-weight: 500;
+    }
+    .author {
+      @extend .date;
+    }
+
+    img {
+      width: 5rem;
+      border-radius: 50%;
+    }
+  }
+}

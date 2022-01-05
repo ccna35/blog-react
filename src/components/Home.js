@@ -5,6 +5,7 @@ import { db } from "../firebaseConfig";
 
 function Home({ deletePost, signedIn }) {
   const [postsList, setPostsList] = useState([]);
+  const [loading, setLoading] = useState(true);
   const postsCollection = collection(db, "posts");
 
   useEffect(() => {
@@ -16,6 +17,7 @@ function Home({ deletePost, signedIn }) {
         return posts.push({ ...doc.data(), id: doc.id });
       });
       setPostsList(posts);
+      setLoading(false);
     });
 
     return () => {
@@ -26,11 +28,15 @@ function Home({ deletePost, signedIn }) {
   return (
     <main className="home">
       <div className="container">
-        <Posts
-          postsList={postsList}
-          deletePost={deletePost}
-          signedIn={signedIn}
-        />
+        {loading ? (
+          "Loading..."
+        ) : (
+          <Posts
+            postsList={postsList}
+            deletePost={deletePost}
+            signedIn={signedIn}
+          />
+        )}
       </div>
     </main>
   );

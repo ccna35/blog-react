@@ -10,7 +10,7 @@ function NewPost({ signedIn }) {
   const [postText, setPostText] = useState("");
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  const { progress, url } = useStorage(file);
+  const { url } = useStorage(file);
 
   const postsCollection = collection(db, "posts");
 
